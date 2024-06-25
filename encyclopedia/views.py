@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+import random
 import markdown2
 
 from . import util
@@ -66,3 +67,11 @@ def edit(request, entry):
         "entry": entry,
         "content": content
     })
+
+def random_entry(request):
+    entries = util.list_entries()
+    if entries:
+        random_entry = random.choice(entries)
+        return HttpResponseRedirect(reverse("view_entry", args=[random_entry]))
+    else:
+        return HttpResponse("No entries available")
