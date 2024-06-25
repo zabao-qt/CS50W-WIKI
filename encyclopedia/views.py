@@ -22,12 +22,18 @@ def view_entry(request, entry):
     })
 
 def search(request):
+    # print ("request: " + str(request))
+    # print ("request.GET: " + str(request.GET))
     if 'q' in request.GET:
-        query = request.GET['q']
+        originQuery = request.GET['q']
+        query = originQuery
+        if ' ' in originQuery:
+            query = originQuery.replace(" ", "")
+
         entries = [entry for entry in util.list_entries() if query in entry.lower()]
         return render(request, 'encyclopedia/search.html', {
             "entries": entries,
-            "query": query,
+            "query": originQuery,
         })
     else:
         # return redirect('index')
