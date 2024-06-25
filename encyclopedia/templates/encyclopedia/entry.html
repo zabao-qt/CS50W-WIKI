@@ -7,10 +7,12 @@
 
 {% block body %}
     <div class="container-fluid">
-        <button type="submit" class="btn btn-primary mt-3 d-flex align-items-center" style="background-color: #007bff; border-color: #007bff;">
-            <img src="{% static 'encyclopedia/pencil.png' %}" alt="Edit" class="me-2 img-fluid" style="height: 1rem; filter: invert(1); margin-right: 5px;">
-            <span class="fw-bold text-white">Edit</span>
-        </button>
+        <div class="d-flex justify-content-between" style="min-width: 20%; width: fit-content">
+            <a href="{% url 'edit' entry=entry %}" class="btn btn-warning mt-3 d-flex align-items-center">
+                <img src="{% static 'encyclopedia/pencil.png' %}" alt="Edit" class="me-2 img-fluid" style="height: 1rem; filter: invert(1);">
+                <span class="fw-bold text-white ml-2">Edit</span>
+            </a>
+        </div>
         {{ content|safe }}
     </div>
 {% endblock %}

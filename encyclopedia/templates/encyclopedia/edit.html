@@ -2,29 +2,20 @@
 {% load static %}
 
 {% block title %}
-    Create a New Page
+    {{ entry }}
 {% endblock %}
 
 {% block body_title %}
-    <h1 class="container mb-4 pb-3 border-bottom">Create a New Page</h1>
+    <h1 class="container mb-4 pb-3 border-bottom">Editing Entry: {{ entry }}</h1>
 {% endblock %}
 
 {% block body %}
-    {% if error %}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="width: calc(100% - 32px);">
-        <span>An entry with the provided title already exists. Please choose a different title.</span>
-    </div>
-    {% endif %}
-    <form action="{% url 'create' %}" method="post">
+    <form action="{% url 'edit' entry=entry %}" method="post">
         {% csrf_token %}
         <div class="container" style="width: calc(100% - 32px);">
             <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" id="title" class="form-control" style="width: 100%;" required>
-            </div>
-            <div class="mb-3">
                 <label for="content" class="form-label">Content</label>
-                <textarea name="content" id="content" class="form-control" rows="5" style="width: 100%;" required></textarea>
+                <textarea name="content" id="content" class="form-control" rows="20" style="width: 100%;" required>{{ content }}</textarea>
             </div>
             <div class="d-flex justify-content-between" style="min-width: 20%; width: fit-content">
                 <button type="submit" class="btn btn-primary mt-3 d-flex align-items-center">
