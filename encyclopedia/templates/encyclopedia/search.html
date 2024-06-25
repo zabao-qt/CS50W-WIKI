@@ -10,12 +10,14 @@
 
 {% block body %}
     {% if entries %}
-        <ul>
+        <ul class="list-group">
             {% for entry in entries %}
-                <li><a href="{% url 'view_entry' entry=entry %}">{{ entry }}</a></li>
+                <a href="{% url 'view_entry' entry=entry %}" class="text-decoration-none">
+                    <li class="list-group-item list-group-item-action border-0">{{ entry }}</li>
+                </a>
             {% endfor %}
         </ul>
     {% else %}
-        <p>No results found for your search.</p>
+        <p class="container">No results found for your search.</p>
     {% endif %}
 {% endblock %}
