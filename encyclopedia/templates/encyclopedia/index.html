@@ -1,4 +1,5 @@
 {% extends "encyclopedia/layout.html" %}
+{% load static %}
 
 {% block title %}
     Encyclopedia
@@ -7,10 +8,10 @@
 {% block body %}
     <h1 class="border-bottom border-1 border-#f0f0f0 pb-2">All Pages</h1>
 
-    <ul>
+    <ul class="list-group">
         {% for entry in entries %}
-            <a href="{% url 'view_entry' entry=entry %}">
-                <li>{{ entry }}</li>
+            <a href="{% url 'view_entry' entry=entry %}" class="text-decoration-none">
+                <li class="list-group-item list-group-item-action border-0">{{ entry }}</li>
             </a>
         {% endfor %}
     </ul>

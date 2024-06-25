@@ -7,6 +7,10 @@
 
 {% block body %}
     <div class="container">
+        <button type="submit" class="btn btn-primary mt-3 d-flex align-items-center" style="background-color: #007bff; border-color: #007bff;">
+            <img src="{% static 'encyclopedia/pencil.png' %}" alt="Edit" class="me-2 img-fluid" style="height: 1rem; filter: invert(1); margin-right: 5px;">
+            <span class="fw-bold text-white">Edit</span>
+        </button>
         {{ content|safe }}
     </div>
 {% endblock %}

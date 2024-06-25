@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body_title %}
-    <h1 class="mb-4 pb-3 border-bottom">Create a New Page</h1>
+    <h1 class="container mb-4 pb-3 border-bottom">Create a New Page</h1>
 {% endblock %}
 
 {% block body %}
@@ -17,17 +17,25 @@
     {% endif %}
     <form action="{% url 'create' %}" method="post">
         {% csrf_token %}
-        <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" name="title" id="title" class="form-control" style="width: calc(100% - 32px);" required>
+        <div class="container" style="width: calc(100% - 32px);">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" id="title" class="form-control" style="width: 100%;" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea name="content" id="content" class="form-control" rows="5" style="width: 100%;" required></textarea>
+            </div>
+            <div class="d-flex justify-content-between" style="min-width: 20%; width: fit-content">
+                <button type="submit" class="btn btn-primary mt-3 d-flex align-items-center">
+                    <img src="{% static 'encyclopedia/save.png' %}" alt="Save" class="me-2 img-fluid" style="height: 1.2rem; filter: invert(1);">
+                    <span class="fw-bold ml-2">Save</span>
+                </button>
+                <button type="button" class="btn btn-danger mt-3 d-flex align-items-center">
+                    <img src="{% static 'encyclopedia/ban.png' %}" alt="Cancel" class="me-2 img-fluid" style="height: 1.2rem; filter: invert(1);">
+                    <span class="fw-bold ml-2">Cancel</span>
+                </button>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="content" class="form-label">Content</label>
-            <textarea name="content" id="content" class="form-control" rows="5" style="width: calc(100% - 32px);" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3 d-flex align-items-center">
-            <img src="{% static 'encyclopedia/save.png' %}" alt="Save" class="me-2 img-fluid" style="height: 1.2rem; filter: invert(1);">
-            <span class="fw-bold ml-2">Save</span>
-        </button>               
     </form>
 {% endblock %}
