@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 import markdown2
 
 from . import util
@@ -38,3 +39,20 @@ def search(request):
     else:
         # return redirect('index')
         return HttpResponse("No query provided")
+    
+def create(request):
+    if request.method == "POST":
+        print ("request.POST: " + str(request.POST))
+        form = request.POST
+        title = form['title']
+        content = form['content']
+        if title in util.list_entries():
+            return render(request, "encyclopedia/create.html", {
+                "error": True
+            })
+        util.save_entry(title, content)
+        return HttpResponseRedirect(reverse("view_entry", args=[title]))
+    return render(request, "encyclopedia/create.html")
+
+def edit(request, entry):
+    return HttpResponse("Edit page for " + entry)
