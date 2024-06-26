@@ -24,17 +24,22 @@ def view_entry(request, entry):
     })
 
 def search(request):
-    # print ("request: " + str(request))
-    # print ("request.GET: " + str(request.GET))
     if 'q' in request.GET:
         originQuery = request.GET['q']
         query = originQuery
         if ' ' in originQuery:
             query = originQuery.replace(" ", "")
 
-        entries = [entry for entry in util.list_entries() if query in entry.lower()]
+        # Check for an exact match
+        entries = util.list_entries()
+        for entry in entries:
+            if entry.lower() == query:
+                return HttpResponseRedirect(reverse("view_entry", args=[entry]))
+            
+        # Return result page with similar keys
+        matching_entries = [entry for entry in util.list_entries() if query in entry.lower()]
         return render(request, 'encyclopedia/search.html', {
-            "entries": entries,
+            "entries": matching_entries,
             "query": originQuery,
         })
     else:
