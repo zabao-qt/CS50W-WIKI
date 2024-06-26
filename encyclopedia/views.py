@@ -47,7 +47,7 @@ def create(request):
         form = request.POST
         title = form['title']
         content = form['content']
-        if title in util.list_entries():
+        if title.lower() in (entry.lower() for entry in util.list_entries()):
             return render(request, "encyclopedia/create.html", {
                 "error": True
             })
