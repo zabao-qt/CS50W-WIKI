@@ -6,7 +6,55 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Complete the implementation of your Wiki encyclopedia. You must fulfill the following requirements:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -18,7 +66,31 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 - Visiting `/wiki/TITLE`, where `TITLE` is the title of an encyclopedia entry, should render a page that displays the contents of that encyclopedia entry.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -26,7 +98,31 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   - If an entry is requested that does not exist, the user should be presented with an error page indicating that their requested page was not found.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -38,7 +134,43 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Index Page
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -50,7 +182,43 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Search
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -58,11 +226,47 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   - If the query matches the name of an encyclopedia entry, the user should be redirected to that entry's page.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   - If the query does not match the name of an encyclopedia entry, the user should instead be taken to a search results page that displays a list of all encyclopedia entries that have the query as a substring. For example, if the search query were `ytho`, then `Python` should appear in the search results.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -74,7 +278,43 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## New Page
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -82,7 +322,31 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   - Users should be able to enter a title for the page and, in a `textarea`, should be able to enter the Markdown content for the page.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -90,7 +354,31 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   - When the page is saved, if an encyclopedia entry already exists with the provided title, the user should be presented with an error message.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -102,7 +390,43 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Edit Page
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -110,11 +434,47 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   - The `textarea` should be pre-populated with the existing Markdown content of the page (i.e., the existing content should be the initial `value` of the `textarea`).
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   - The user should be able to click a button to save the changes made to the entry.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -126,7 +486,43 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Random Page
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -138,7 +534,43 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Markdown to HTML Conversion
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -150,11 +582,59 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Challenge for those more comfortable
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 - If you're feeling more comfortable, try implementing the Markdown to HTML conversion without using any external libraries, supporting headings, boldface text, unordered lists, links, and paragraphs. You may find using [regular expressions](https://docs.python.org/3/howto/regex.html) in Python helpful.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

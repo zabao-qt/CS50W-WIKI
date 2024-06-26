@@ -6,12 +6,12 @@
 {% endblock %}
 
 {% block body_title %}
-    <h1 class="container mb-4 pb-3 border-bottom">Create a New Page</h1>
+    <h1 class="container mb-4 pb-3 pt-3 border-bottom">Create a New Page</h1>
 {% endblock %}
 
 {% block body %}
     {% if error %}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="width: calc(100% - 32px);">
+    <div class="container alert alert-danger alert-dismissible fade show" role="alert" style="width: calc(100% - 32px);">
         <span>An entry with the provided title already exists. Please choose a different title.</span>
     </div>
     {% endif %}
